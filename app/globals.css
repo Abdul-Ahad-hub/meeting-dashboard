@@ -1,0 +1,143 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Google Workspace / Meet inspired design tokens (Material 3 flavour).
+ * Light is the default; `.dark` on <html> switches to the Meet dark palette.
+ */
+:root {
+  color-scheme: light;
+  --bg: #f8fafd;
+  --surface: #ffffff;
+  --surface-2: #f1f4f9;
+  --surface-3: #e9eef6;
+  --border: #dadce0;
+  --border-subtle: #e8eaed;
+  --text: #1f1f1f;
+  --text-2: #444746;
+  --text-3: #747775;
+  --blue: #0b57d0;
+  --blue-hover: #0842a0;
+  --blue-on: #ffffff;
+  --blue-tonal: #d3e3fd;
+  --blue-tonal-text: #041e49;
+  --green: #137333;
+  --green-tonal: #c4eed0;
+  --green-solid: #1e8e3e;
+  --red: #b3261e;
+  --red-tonal: #f9dedc;
+  --red-solid: #d93025;
+  --amber: #b06000;
+  --amber-tonal: #fde293;
+  --amber-solid: #f9ab00;
+  --grid: #e8eaed;
+  --shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+}
+
+.dark {
+  color-scheme: dark;
+  --bg: #131314;
+  --surface: #1e1f20;
+  --surface-2: #282a2c;
+  --surface-3: #333537;
+  --border: #444746;
+  --border-subtle: #2d2f31;
+  --text: #e3e3e3;
+  --text-2: #c4c7c5;
+  --text-3: #8e918f;
+  --blue: #a8c7fa;
+  --blue-hover: #d3e3fd;
+  --blue-on: #062e6f;
+  --blue-tonal: #0842a0;
+  --blue-tonal-text: #d3e3fd;
+  --green: #6dd58c;
+  --green-tonal: #0f5223;
+  --green-solid: #34a853;
+  --red: #f2b8b5;
+  --red-tonal: #601410;
+  --red-solid: #f28b82;
+  --amber: #fdd663;
+  --amber-tonal: #4d3800;
+  --amber-solid: #fdd663;
+  --grid: #2d2f31;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 0 1px 3px 1px rgba(0, 0, 0, 0.4);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-line: var(--border);
+  --color-line-subtle: var(--border-subtle);
+  --color-ink: var(--text);
+  --color-ink-2: var(--text-2);
+  --color-ink-3: var(--text-3);
+  --color-blue: var(--blue);
+  --color-blue-hover: var(--blue-hover);
+  --color-blue-on: var(--blue-on);
+  --color-blue-tonal: var(--blue-tonal);
+  --color-blue-tonal-ink: var(--blue-tonal-text);
+  --color-good: var(--green);
+  --color-good-tonal: var(--green-tonal);
+  --color-good-solid: var(--green-solid);
+  --color-bad: var(--red);
+  --color-bad-tonal: var(--red-tonal);
+  --color-bad-solid: var(--red-solid);
+  --color-warn: var(--amber);
+  --color-warn-tonal: var(--amber-tonal);
+  --color-warn-solid: var(--amber-solid);
+  --font-sans: 'Google Sans', 'Google Sans Text', 'Product Sans', Roboto, 'Segoe UI',
+    system-ui, -apple-system, Arial, sans-serif;
+  --font-mono: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+* {
+  border-color: var(--border-subtle);
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 24px;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--surface-2) 25%, var(--surface-3) 50%, var(--surface-2) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}
