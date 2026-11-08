@@ -1,0 +1,18 @@
+# dependencies
+node_modules
+
+# next
+.next/
+next-env.d.ts
+*.tsbuildinfo
+
+# env
+.env*.local
+.env
+
+# unused alternative lockfiles (npm is the package manager)
+pnpm-lock.yaml
+pnpm-workspace.yaml
+
+.vercel/
+.DS_Store
