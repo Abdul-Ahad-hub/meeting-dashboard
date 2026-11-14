@@ -2,7 +2,7 @@
 
 A Google-style (Material 3, light and dark) dashboard for the data collected by the
 Meet Recorder extension. It reads live data from the
-[Engagement Analysis System](https://github.com/Abdul-Ahad-hub/Engagement-Analysis-System)
+[Google Meet Engagement Analysis Wrapper](https://github.com/Abdul-Ahad-hub/Google-meet-engagement-analysis-wrapper)
 backend, scoped to the signed-in Google account.
 
 ## What it shows
@@ -28,7 +28,7 @@ npm run dev
 
 | Variable | Purpose |
 |----------|---------|
-| `NEXT_PUBLIC_API_URL` | Backend base URL. Defaults to the hosted backend. |
+| `NEXT_PUBLIC_API_URL` | Google Meet Wrapper backend base URL. Defaults to `https://google-meet-engagement-analysis-wrapper.vercel.app`. |
 | `NEXT_PUBLIC_GOOGLE_CLIENT_ID` | Google OAuth **Web application** client ID. |
 
 ### Google sign-in
@@ -41,4 +41,4 @@ npm run dev
    extension so the same test users can sign in.
 
 The dashboard calls `GET /engagement/me/sessions` and `GET /engagement/me/sessions/:id`
-with the Google access token; the backend verifies it and returns only that user's data.
+with the Google access token; the wrapper verifies it and returns only that user's data.

@@ -1,8 +1,8 @@
 import type { AuthUser, SessionReportDTO, SessionDTO } from './types'
 
-/** Backend base URL. Override with NEXT_PUBLIC_API_URL (no trailing slash). */
+/** Google Meet Wrapper backend base URL. Override with NEXT_PUBLIC_API_URL (no trailing slash). */
 export const API_URL = (
-  process.env.NEXT_PUBLIC_API_URL || 'https://engagement-analysis-system.vercel.app'
+  process.env.NEXT_PUBLIC_API_URL || 'https://google-meet-engagement-analysis-wrapper.vercel.app'
 ).replace(/\/+$/, '')
 
 export class ApiError extends Error {
